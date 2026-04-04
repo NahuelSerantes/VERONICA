@@ -10,7 +10,7 @@ Clonar el repositorio:
 
 ```bash
 git clone https://github.com/NahuelSerantes/VERONICA
-cd veronica
+cd VERONICA
 ```
 
 Crear entorno virtual:
