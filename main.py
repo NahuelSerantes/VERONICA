@@ -1,4 +1,5 @@
 import os
+import glob
 import time
 import wave
 import pyaudio
@@ -6,6 +7,9 @@ import whisper
 from gtts import gTTS
 from dotenv import load_dotenv
 from openai import OpenAI
+
+##### ACCEDE A FFMEG ######
+os.environ["PATH"] += os.pathsep + r"C:\ffmpeg\bin"
 
 # Cargar variables del archivo .env
 load_dotenv()
@@ -99,10 +103,24 @@ def preguntar_modelo(texto_usuario):
     return texto_respuesta
 
 # VERONICA VA HABLAR USANDO EL REPRODUCTOR DE AUDIO DE LA COMPUTADORA
+
 def hablar(texto):
+    limpiar_mp3()
+    nombre_archivo = f"respuesta_{int(time.time())}.mp3"
     tts = gTTS(texto, lang="es", slow=False)
-    tts.save(ARCHIVO_MP3)
-    os.system(ARCHIVO_MP3)
+    tts.save(nombre_archivo)
+    os.system(f'start "" "{nombre_archivo}"')
+
+
+# BORRA LOS AUDIOS DE LAS CONVERSACIONES VIEJAS 
+
+def limpiar_mp3():
+    archivos = glob.glob("respuesta_*.mp3")
+    for archivo in archivos[:-5]:  # deja los últimos 5
+        try:
+            os.remove(archivo)
+        except:
+            pass
 
 # INTERFAZ GRAFICA POR CONSOLA
 def main():
