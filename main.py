@@ -8,7 +8,7 @@ from gtts import gTTS
 from dotenv import load_dotenv
 from openai import OpenAI
 
-##### ACCEDE A FFMEG ######
+##### ACCEDE A FFMPEG ######
 os.environ["PATH"] += os.pathsep + r"C:\ffmpeg\bin"
 
 # Cargar variables del archivo .env
