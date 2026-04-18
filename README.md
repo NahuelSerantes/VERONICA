@@ -69,7 +69,8 @@ veronica/
 * Asegurate de tener Python instalado (recomendado 3.10+)
 * Si algo falla, revisá que el entorno virtual esté activado
 * En ALGUNOS WINDOWS NO VIENE INSTALADO --> ffmpeg (Un complemento que necesita para funcionar)
-  DESCARGALO AQUÍ --> https://ffmpeg.org/download.html y ponlo en la carpeta C:\ffmpeg\bin
+  DESCARGALO AQUÍ --> https://ffmpeg.org/download.html. Lo descomprimes y le cambias el nombre por "ffmpeg" y ponlo en la carpeta raiz de la unidad C
+  Te quedaría algo así la ruta --> C:\ffmpeg\
 
 ---
 
